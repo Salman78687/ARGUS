@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- Placeholder avatar — replace frontend/avatar.svg (or point index.html at a PNG) -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="60%">
+      <stop offset="0" stop-color="#1e1b4b"/><stop offset="1" stop-color="#07071a"/>
+    </radialGradient>
+    <radialGradient id="iris" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#67e8f9"/><stop offset=".6" stop-color="#8b5cf6"/><stop offset="1" stop-color="#4c1d95"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <path d="M90 190 Q200 90 310 190 Q200 290 90 190 Z" fill="none" stroke="#c4b5fd" stroke-width="6" stroke-linejoin="round"/>
+  <circle cx="200" cy="190" r="48" fill="url(#iris)"/>
+  <circle cx="200" cy="190" r="20" fill="#07071a"/>
+  <circle cx="212" cy="178" r="7" fill="#fff" opacity=".85"/>
+</svg>

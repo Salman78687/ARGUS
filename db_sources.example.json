@@ -1,0 +1,31 @@
+{
+  "_comment": "Copy to db_sources.json and adapt to your schema. Each source runs its query when any keyword appears in the user's message. Use a read-only DB user. These queries match examples/schema.sql.",
+  "sources": [
+    {
+      "name": "app_errors",
+      "label": "application errors",
+      "keywords": ["error", "fail", "issue", "problem", "not working", "broken"],
+      "query": "SELECT id, application, action, code, description, created_at FROM app.error_logs ORDER BY created_at DESC LIMIT 10"
+    },
+    {
+      "name": "job_runs",
+      "label": "background job runs",
+      "keywords": ["job", "sync", "schedule", "import", "export", "timeout"],
+      "query": "SELECT id, job_name, status, error_message, duration_ms, created_at FROM app.job_runs WHERE status <> 'completed' OR error_message IS NOT NULL ORDER BY created_at DESC LIMIT 5",
+      "query_if_empty": "SELECT id, job_name, status, duration_ms, created_at FROM app.job_runs ORDER BY created_at DESC LIMIT 5"
+    },
+    {
+      "name": "audit_logs",
+      "label": "activity audit logs",
+      "keywords": ["changed", "who", "audit", "workflow", "assign", "updated", "deleted"],
+      "query": "SELECT id, subject, type, description, created_at FROM app.audit_logs ORDER BY created_at DESC LIMIT 10"
+    },
+    {
+      "name": "app_errors",
+      "label": "application errors",
+      "keywords": ["log", "recent", "check", "what happened", "history"],
+      "only_if_no_match": true,
+      "query": "SELECT id, application, action, code, description, created_at FROM app.error_logs ORDER BY created_at DESC LIMIT 10"
+    }
+  ]
+}

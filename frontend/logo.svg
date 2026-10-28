@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 30">
+  <!-- Placeholder logo — replace frontend/logo.svg with your own (52×30 ratio) -->
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="52" height="30" fill="url(#g)"/>
+  <path d="M8 15 Q26 1 44 15 Q26 29 8 15 Z" fill="none" stroke="#fff" stroke-width="2.2"/>
+  <circle cx="26" cy="15" r="5" fill="#fff"/>
+  <circle cx="26" cy="15" r="2.2" fill="#07071a"/>
+</svg>
